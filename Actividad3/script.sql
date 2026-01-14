@@ -39,19 +39,15 @@ BEGIN
             LEAVE bucle_datos;
         END IF;
         
-        -- Primero: Insertar en APPLICATION
         INSERT IGNORE INTO application (app_id, app_code, app_name, app_description)
         VALUES (app_id_fk, app_cod, app_nom, app_desc);
         
-        -- Segundo: Insertar en COMPANY
         INSERT IGNORE INTO company (id_company, codigo_company, name_company, description_company)
         VALUES (id_comp, cod_comp, nom_comp, des_comp);
         
-        -- Tercero: Insertar en VERSION
         INSERT IGNORE INTO version (version_id, app_id, version, version_description)
         VALUES (ver_id, app_id_fk, ver, ver_desc);
         
-        -- Cuarto: Insertar en VERSION_COMPANY
         INSERT IGNORE INTO version_company (version_company_id, company_id, version_id, version_company_description)
         VALUES (ver_comp_id, comp_id, ver_id_fk, ver_comp_desc);
         
