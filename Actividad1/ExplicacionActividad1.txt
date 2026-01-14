@@ -1,0 +1,6 @@
+El diagrama muestra las relaciones entre las tablas según las condiciones establecidas:
+
+Una compañía (company) puede tener múltiples entradas en version_company (relación 1:N), permitiendo que una misma compañía tenga múltiples versiones de aplicaciones
+Una versión (version) puede estar asociada a múltiples compañías a través de version_company (relación 1:N)
+Una aplicación (application) tiene exactamente una versión (version), y cada versión pertenece a una sola aplicación (relación 1:1)
+La condición de 'solo una aplicación por compañía' se mantiene mediante lógica de negocio, ya que todas las entradas de version_company para una compañía deben referirse a versiones de la misma aplicación
